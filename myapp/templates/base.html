@@ -1,0 +1,21 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <link rel="stylesheet" href="{% static 'css/employee.css' %}">
+</head>
+<body>
+    <nav>
+        <a href="{% url 'index' %}" class="{% if request.resolver_match.url_name == 'index' %}active{% endif %}">Home</a>
+        <a href="{% url 'employee' %}" class="{% if request.resolver_match.url_name == 'employee' %}active{% endif %}">Employee</a>
+        <a href="{% url 'product' %}" class="{% if request.resolver_match.url_name == 'product' %}active{% endif %}">Product</a>
+        <a href="{% url 'contact' %}" class="{% if request.resolver_match.url_name == 'contact' %}active{% endif %}">Contact</a>
+    </nav>
+    {% block content %}
+    {% endblock %}
+</body>
+</html>

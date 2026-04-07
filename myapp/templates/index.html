@@ -1,0 +1,54 @@
+{% extends 'base.html' %}
+
+{% block content %}
+
+<div class="sections-container">
+    <!-- Form Section -->
+    <section class="section-box form-section">
+        <h2>Login / Register</h2>
+        <form action="" enctype="multipart/form-data" method="post">
+            {% csrf_token %}
+            <input type="hidden" name="id" placeholder="ID" value="{{register.id}}">
+            <input type="email" name="email" placeholder="Email" value="{{register.name}}">
+            <input type="text" name="phone" placeholder="Contact Number">
+            
+                <input type="submit" value="Login" >
+                <div>
+                    <span>Don't Have Account?</span><input type="submit" value="Register">
+                </div>
+                
+            
+        </form>
+    </section>
+
+    <!-- Table Section -->
+    <section class="section-box table-section">
+        <h2>Registered Users</h2>
+        <table>
+            <thead>
+                <tr>
+                    <th>ID</th>
+                    <th>Email</th>
+                    <th>Contact</th>
+                    <th>Action</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for i in Registers %}
+                <tr>
+                    <td>{{i.id}}</td>
+                    <td>{{i.Email}}</td>
+                    <td>{{i.Contact}}</td>
+                    <td><!-- Add buttons or links here --></td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </section>
+
+    <!-- Additional Sections -->
+    <section class="section-box">Section 3</section>
+    <section class="section-box">Section 4</section>
+</div>
+
+{% endblock %}

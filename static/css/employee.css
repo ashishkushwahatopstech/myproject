@@ -1,0 +1,122 @@
+/* General form styling */
+form {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background-color: #f9f9f9;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    font-family: Arial, sans-serif;
+}
+
+/* Form heading */
+form h2 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+/* Labels styling */
+form label {
+    display: block;
+    margin-top: 15px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #555;
+}
+
+/* Text, email, tel inputs */
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"] {
+    width: 100%;
+    padding: 10px 12px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+    transition: border-color 0.3s;
+}
+
+/* Focus effect */
+form input[type="text"]:focus,
+form input[type="email"]:focus,
+form input[type="tel"]:focus {
+    border-color: #007BFF;
+    outline: none;
+}
+
+/* Radio buttons styling */
+form input[type="radio"] {
+    margin-right: 5px;
+    margin-left: 10px;
+}
+
+/* Submit button */
+form input[type="submit"] {
+    width: 100%;
+    padding: 12px;
+    margin-top: 20px;
+    border: none;
+    background-color: #007BFF;
+    color: white;
+    font-size: 16px;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+form input[type="submit"]:hover {
+    background-color: #0056b3;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+    form {
+        padding: 20px;
+        margin: 20px;
+    }
+}
+
+
+
+
+
+        h2 {
+            text-align: center;
+            color: #333;
+            margin-bottom: 20px;
+        }
+
+        table {
+            width: 80%;
+            border-collapse: collapse;
+            margin: 0 auto;
+            background-color: #fff;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        th, td {
+            padding: 12px 15px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #007BFF;
+            color: white;
+            font-weight: 700;
+        }
+
+        tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+
+        tr:hover {
+            background-color: #e0f0ff;
+        }
+
+        .center {
+            text-align: center;
+        }

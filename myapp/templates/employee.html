@@ -1,0 +1,61 @@
+{% extends 'base.html' %}
+
+
+
+    {% block content %}
+
+    <form action="" enctype="multipart/form-data" method="post">
+        {% csrf_token %}
+        <h2>Register Employee</h2>
+        <input type="hidden" name="id">
+        <label for="">Full Name</label>
+        <input type="text" name="f_name" placeholder="First Name">
+        <input type="text" name="m_name" placeholder="Middle Name">
+        <input type="text" name="l_name" placeholder="Last Name">
+        <label for="">Marital Status</label>
+        <input type="radio" name="marital_status" id="" value="Maried" placeholder="Maried"><span>Married</span>
+        <input type="radio" name="marital_status" id="" value="Single" placeholder="Single"><span>Single</span>
+        <label for="">E-mail</label>
+        <input type="email" name="email" id="">
+        <label for="">MObile Number</label>
+        <input type="tel" name="contact" id="">
+        <label for="">Home Address</label>
+        <input type="text" name="address" id="">
+        <input type="submit" value="Submit">
+    </form>
+
+    <h2>Employee List</h2>
+
+    <table>
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Full Name</th>
+                <th>Marital Status</th>
+                <th>Email</th>
+                <th>Contact</th>
+                <th>Address</th>
+                <th colspan="2">Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for emp in E_all %}
+            <tr>
+                <td class="center">{{ forloop.counter }}</td>
+                <td>{{ emp.F_name }} {{ emp.M_name }} {{ emp.L_name }}</td>
+                <td>{{ emp.Martial_status }}</td>
+                <td>{{ emp.Email }}</td>
+                <td>{{ emp.Contact }}</td>
+                <td>{{ emp.Address }}</td>
+                <td><a href="?did={{emp.id}}">Delete</a></td>
+                <td><a href="">Update</a></td>
+            </tr>
+            {% empty %}
+            <tr>
+                <td colspan="6" class="center">No employees found.</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+
+    {% endblock %}
